@@ -10,23 +10,23 @@ interface Props {
 
 export const ProductCard = ({ product }: Props) => {
     const price = product.default_price as Stripe.Price
-
     return (
-        <Link href={"/products/1"}>
-            <Card>
+        <Link href={`/products/${product.id}`}>
+            <Card className="h-[35em]">
                 {product.images && product.images[0] && (
-                    <div>
-                        <Image 
-                        alt={product.name} 
-                        src={product.images[0]} 
-                        layout="fill" 
-                        objectFit="cover" />
+                    <div className="">
+                        <img
+                            src={product.images[0]}
+                            alt={product.name}
+                            className="rounded-md w-full h-full transition-opacity duration-500 ease-in-out"
+                        />
                     </div>
-                )}
 
+                )}
                 <CardHeader><CardTitle> {product.name} </CardTitle></CardHeader>
                 <CardContent>
                     {price && price.unit_amount && (<p> ${(price.unit_amount / 100).toFixed(2)}</p>)}
+                    {product.description && (<p> {product.description} </p>)}
                     <Button> View Details </Button>
                 </CardContent>
             </Card>

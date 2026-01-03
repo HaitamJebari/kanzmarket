@@ -10,9 +10,11 @@ export default async function ProductsPage() {
         expand: ["data.default_price"]
     })
     return (
-        <div>
-            <h1>All Products</h1>
-            <ProductList products={products.data} />
+        <div className="">
+            <div className="w-full">
+                <h1 className="text-lg text-center">All Products</h1>
+                <ProductList products={products.data} />
+            </div>
         </div>
     )
 }
