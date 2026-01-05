@@ -19,15 +19,14 @@ export const ProductList = ({ products }: Props) => {
     })
 
     return (
-        <div className="flex gap-2 py-7 px-7">
-            <div className="w-[40em] h-[50em] border-6 text-black rounded-md  p-5">
-                <div className="border my-7">
-                    <input type="text" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} className="w-full text-center" placeholder="Search products..." />
-                </div>
+        <div className="flex gap-7 p-7">
+            <div className="border rounded-md w-[30em] h-[100vh] max-sm:hidden p-4">
+                    <label htmlFor="">Search for products </label>
+                    <input type="text" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} className="border text-center" placeholder="Search products..." />
             </div>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7 p-9">
+            <ul className="flex flex-wrap gap-8 w-full">
                 {filteredProduct.map((product, key) => {
-                    return <li key={key} className="w-full h-full"><ProductCard product={product} /> </li>
+                    return <li key={key}><ProductCard product={product} /> </li>
                 })}
             </ul>
         </div>

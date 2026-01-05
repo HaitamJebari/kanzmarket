@@ -39,7 +39,7 @@ export const Navbar = () => {
                 </span>}
           </Link>
         </div>
-        <Button className="md:hidden bg-white flex flex-col justify-center gap-1"
+        <Button className="md:hidden bg-white flex flex-col justify-center gap-1 cursor-pointer  hover:bg-white hover:border"
           aria-label="Toggle menu" onClick={() => setOpen(!open)}>
           <span className="block w-6 h-0.5 bg-black"></span>
           <span className="block w-6 h-0.5 bg-black"></span>
@@ -48,10 +48,10 @@ export const Navbar = () => {
       </div>
       {/* Mobile Menu */}
       {open && (
-        <div className="md:hidden fixed bg-white w-full mt-4 flex flex-col space-y-4 text-center border-b pb-6 hover:bg-blue-600">
-          <Link href="/" onClick={() => setOpen(false)}>Home</Link>
-          <Link href="/products" onClick={() => setOpen(false)}>Products</Link>
-          <Link href="/checkout" onClick={() => setOpen(false)}>Checkout</Link>
+        <div className="md:hidden fixed bg-white w-full mt-4 flex flex-col space-y-4 text-center border-b pb-6">
+          <Link className="hover:text-blue-600" href="/" onClick={() => setOpen(false)}>Home</Link>
+          <Link className="hover:text-blue-600" href="/products" onClick={() => setOpen(false)}>Products</Link>
+          <Link className="hover:text-blue-600" href="/checkout" onClick={() => setOpen(false)}>Checkout</Link>
         </div>
       )}
 
